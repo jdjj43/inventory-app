@@ -1,0 +1,22 @@
+<%- include('header') %>
+
+  <main>
+    <div class="ml-3">
+      <div>
+        <h2>Title: <%= category.name %></h2>
+        
+        <p><%= category.description %></p>
+      </div>
+      <div class="button-container">
+        <a href="<%= category.url%>/update" class="button1">Update Category</a>
+      </div>
+      <div class="button-container">
+        <a href="<%= category.url%>/delete" class="button1 delete">Delete Category</a>
+      </div>
+      <div class="button-container">
+        <a href="/category">< Back to Categories</a>
+      </div>
+    </div>
+  </main>
+
+<%- include('footer') %>

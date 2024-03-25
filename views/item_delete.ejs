@@ -1,0 +1,12 @@
+<%- include('header') %>
+  <main>
+    <h1>Are you sure you want to Delete this item?</h1>
+    <h2 class="error"><%= error.length > 0 ? error : ""%></h2>
+    <form method="POST">
+      <input type="hidden" value="<%= item._id %>" name="itemid">
+      <label for="password">Enter your password to confirm:</label>
+      <input type="password" id="password" name="password">
+      <button type="submit">Delete</button>
+    </form>
+  </main>
+<%- include('footer') %>

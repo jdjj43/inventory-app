@@ -1,0 +1,28 @@
+<%- include('header') %>
+
+  <main>
+    <div class="ml-3">
+
+      <div>
+        <h1>Name: <%= category.name %></h1>
+      </div>
+      <% if(items.length) { %>
+        <div>
+          <p>Delete or Modify the following items in order to delete this category:</p>
+          <% items.forEach(item => { %>
+            <a href="<%= item.url %>"><%= item.name %></a>
+          <% }) %>
+        </div>
+      <% }else { %>
+        <div class="">
+          <p>Do you really want to delete this Category?</p>
+          <form method="POST">
+            <input type="hidden" name="categoryid" value="<%= category._id %>">
+            <button type="submit" class="button1 delete">Delete</button>
+          </form>
+        </div>
+      <% } %>
+    </div>
+  </main>
+
+<%- include('footer') %>

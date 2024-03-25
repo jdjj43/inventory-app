@@ -1,0 +1,26 @@
+<%- include('header') %>
+<main>
+  <div class="detail-container">
+    <div class="detail-image">
+      <% if(item.imageUrl) { %>
+      <img src="<%= item.imageUrl %>" alt="<%= item.name %>" />
+      <% } %>
+    </div>
+
+    <div class="product-detail">
+      <h1><%= item.name %></h1>
+      <p><%= item.description %></p>
+      <p>$<%= item.price %></p>
+      <p>
+        Categories: <% item.categories.forEach(category => { %>
+        <a href="<%= category.url %>"><%= category.name %></a>
+        <% }); %>
+      </p>
+      <div class="button-container">
+        <a href="<%= item.url %>/update" class="button1">Update</a>
+        <a href="<%= item.url %>/delete" class="button1 delete">Delete</a>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include('footer') %>

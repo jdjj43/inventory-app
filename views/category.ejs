@@ -1,0 +1,17 @@
+<%- include('header') %>
+
+<main>
+  <div class="ml-3">
+    <h1>All categories: </h1>
+    <ul>
+      <% categories.map(category => { %>
+        <li>
+          <a href="<%= category.url%>"><%= category.name %></a>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+
+</main>
+
+<%- include('footer') %>

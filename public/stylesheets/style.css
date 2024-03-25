@@ -1,0 +1,188 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+  color: #023047;
+}
+li {
+  font-size: 2.5rem;
+}
+.pb-1 {
+  padding-bottom: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.ml-3 {
+  margin-left: 3rem;
+}
+
+.container {
+  padding-top: 8rem;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #023047;
+  color: white;
+}
+
+.nav-bar h1 {
+  padding: 0;
+  margin: 1rem;
+}
+
+.nav-bar a {
+  color: white;
+}
+
+.right-side {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  margin-right: 2rem;
+  font-weight: 700;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column  ;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  height: 42rem;
+  background-color: #f0f0f0;
+}
+
+.product-title {
+  max-height: 3rem;
+  max-width: 24rem;
+  text-align: justify;
+  margin: 2rem 0 0 0;
+}
+
+.product-price {
+  font-weight: 700;
+}
+
+.img-container {
+  width: 90%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.img-container img {
+  object-fit: contain;
+  width: 200px;
+  height: 250px;
+  background-color: white;
+}
+
+
+.button1 {
+  border: none;
+  padding: 1rem 3rem;
+  background-color: #219ebc;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.detail-container {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  gap: 6rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.detail-image {
+  width: 40%;
+}
+
+.detail-image img{
+  max-height: 58rem;
+  max-width: 50rem;
+}
+
+.product-detail {
+  width: 40%;
+}
+
+.button-container {
+  margin-top: 3rem;
+}
+
+.delete {
+  background-color: red;
+}
+
+.form-container {
+  width: 50%;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.input-container input, #description {
+  font-size: 1.4rem;
+  border: 2px solid #d9d9d9;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}
+
+.categories {
+  margin-top: 1rem;
+}
+
+.password-container {
+  width: 65%;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+
+.password-container label{
+  color: #023047;
+}
+
+#description {
+  resize: none;
+}
+
+.price-number {
+  display: flex;
+  gap: 2rem;
+}
+
+.form-category {
+  margin: 0 auto;
+}

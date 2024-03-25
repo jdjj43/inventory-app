@@ -1,0 +1,14 @@
+<%- include('header') %>
+  <main>
+    <div class="products-container">
+      <% items.forEach(item => { %>
+          <div class="product-card">
+            <a href="<%= item.url %>" class="img-container"><img src="<%= item.imageUrl %>" alt="<%= item.name %>"></a>
+            <p class="product-title"><%= item.name %></p>
+            <p class="product-price">$<%= item.price %></p>
+            <a href="<%= item.url %>" class="button1">See More!</a>
+          </div>
+      <% }) %>
+    </div>
+  </main>
+<%- include('footer') %>

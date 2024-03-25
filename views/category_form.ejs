@@ -1,0 +1,20 @@
+<%- include('header') %>
+
+  <main>
+    <!-- Contenido de la página principal -->
+    <div class="form-container form-category">
+      <form method="post">
+        <div class="input-container">
+          <label for="name">Category Name: </label>
+          <input type="text" name="name" id="name" placeholder="Name" value="<%= typeof category === 'undefined' || category == null ? '' : category.name %>">
+        </div>
+        <div class="input-container">
+          <label for="description">Category Description: </label>
+          <textarea rows="6" type="text" name="description" id="description" placeholder="Description"><%= typeof category === 'undefined' || category == null ? '' : category.description %></textarea>
+        </div>
+        <button type="submit" class="button1 mt-2">Submit</button>
+      </form>
+    </div>
+  </main>
+
+<%- include('footer') %>

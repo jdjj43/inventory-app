@@ -1,0 +1,65 @@
+<%- include('header') %>
+
+  <main>
+    <% if(errors.length > 0) { %>
+      <ul>
+        <% errors.map(error => { %>
+          <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+    <div class="detail-container">
+      <% if(item.imageUrl) { %>
+        <div class="detail-image">
+          <img src="<%= item.imageUrl %>" alt="<%= item.name %>">
+        </div>
+      <% } %>
+      <div class="form-container">
+        <form enctype="multipart/form-data" method="POST">
+          <div class="input-container">
+            <label for="name">Item Name:</label>
+            <input type="text" id="name" name="name" placeholder="Item Name" value="<%= item && item.name %>">
+          </div>
+          <div class="input-container">
+            <label for="description">Item Description:</label>
+            <textarea rows="6" type="text" id="description" name="description" placeholder="Item Description"><%= item && item.description %></textarea>
+          </div>
+          <div class="categories">
+            <label>Categories:</label>
+            <% categories.map(category => { %>
+              <% if(category.checked) { %>
+                <input type="checkbox" name="categories" id="<%= category._id %>" value="<%= category._id %>" checked>
+              <% } else { %>
+                <input type="checkbox" name="categories" id="<%= category._id %>" value="<%= category._id %>">
+              <% } %>
+              
+              <label for="<%= category._id %>"><%= category.name %></label>
+            <% }); %>
+          </div>
+          <div class="price-number">
+            <div class="input-container">
+              <label for="price">Price:</label>
+              <input type="number" id="price" name="price" placeholder="Item Price" min=0 value="<%= item.price ? item.price : 0 %>">
+            </div>
+            <div class="input-container">
+              <label for="number">Number in Stock:</label>
+              <input type="number" id="number" name="number" placeholder="Number in stock" min=0 value="<%= item.number ? item.number : 1 %>">
+            </div>
+          </div>
+          <div class="input-container pb-1">
+            <input type="file" name="image" accept="image/*">
+          </div>
+    
+          <% if(passwordIsRequired) { %>
+            <div class="password-container input-container">
+              <label for="password">In order to update you need to use the password:</label>
+              <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+          <% } %>
+
+          <button type="submit" class="button1"><%= item.name ? "Update" : "Create" %></button>
+        </form>
+      </div>
+    </div>
+  </main>
+<%- include('footer') %>
